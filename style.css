@@ -1,54 +1,166 @@
-/* Verção desktop*/
-/* @media screen and    (min-width:950px) { */
 * { 
     padding: 0;
     margin: 0;
 }
-
-body {
-    height: 100vh;
-    width: 100vw; 
-    background-color: white;
+html {
+    font-size: 10px;
 }
 
-.container {
-    background-color: gainsboro;
-    height: 100vh;
-    width: 100vw;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr)  ;
-    grid-template-rows: 70px 500px ;
-    grid-gap: 10px;
-    grid-template-areas: 
-    "superior superior superior"
-    "navLeft navRight navRight"
-    "inferior inferior inferior"
-    ;
-    
-}
 
-.superior {
-    grid-area: superior;
-    grid-row: 50px;
-
-}
-
-.navLeft {
-    grid-area: navLeft;
-}
-
-.navRight {
-    grid-area: navRight;
-}
-
-.inferior {
-    grid-area:inferior ;
-}
 
 .estilo {
-    border: 1px solid black;
-    padding: 10px;
-    background-color: rgba(150, 150, 250, 0.6);
+    border: 0.1rem solid black;
 }
 
-/* } */
+.versoes {
+    width: 25.3rem;    
+    height: 6rem;
+
+}
+.versoes h4 {
+    text-align: center;
+    font-size: 1.7rem;
+    color: darkblue;
+    padding-bottom: 1rem;
+}
+
+
+.versoes ul {
+    margin-left: 0.1rem;
+    padding: 1rem;
+    border: 1px solid;
+    border-radius: 10px;
+    height: 3rem;
+    width: 26rem;
+    display: flex;
+    gap: 1rem;
+    overflow-x: scroll;
+}
+
+
+.versoes li {
+    list-style: none;
+    padding-bottom: 1rem;
+}
+
+.livros ol {
+    margin-top: 1rem;
+}
+.livros li {
+    background-color: #025492;
+    border: 1px solid black;
+    padding: 0.5rem;
+    height: 2rem;
+    margin: 0.5rem;    
+}
+
+.livrosTitulo {
+    background-color: rgba(150, 150, 240, 0.2);
+    font-size: 1.6rem;
+    border: 1px solid black;
+    padding: 0.5rem;
+    height: 2rem;
+    text-transform: uppercase;
+}
+
+/* VERSÃO DESKTOP */
+@media screen and (min-width: 1024px) {
+
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        min-height: 100vh;
+        width: 102.4rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+        "cabecalho cabecalho cabecalho cabecalho"
+        "sidebar conteudo conteudo conteudo"
+        "rodape rodape rodape rodape"
+        ;
+    }
+
+    .cabecalho {
+        grid-area: cabecalho;
+        height: 7rem;
+        display: flex;
+        padding-top: 2rem;
+        padding-left: 3rem;
+        font-size: 2rem;
+    }
+
+    .cabecalho img {
+        height: 5rem;
+        width: 5rem;
+        padding-right: 1rem;
+    }
+
+    .sidebar {
+        grid-area: sidebar;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .sidebar h2 {
+        font-size: 2.2rem;
+        margin: 1rem 0; 
+    }
+
+    #buscaLivro {
+        margin-top: 4rem;
+        padding: 0.5rem;
+        width: 90%;
+    }
+
+    .livros {
+        padding: 1.5rem;
+        margin-top: 1rem;
+        border: 1px solid black;
+        border-radius: 15px;
+        width: 25rem;
+    }
+    .livros h4 {
+        font-size: 1.8rem;
+        padding-bottom:1rem ;
+    }
+
+    .livros li{
+        list-style: none;
+    }
+    
+    .livros li a {
+        color: #f8bf0f;
+        font-size: 1.6rem;
+        font-weight: bold;
+        text-decoration: none;
+        width: 100%;
+        display: block;
+    }
+
+    .livros li a:hover {
+        text-decoration: underline;
+    }
+
+    .conteudo {
+        grid-area: conteudo;
+        min-height: calc(100vh - 16rem);
+    }
+
+    .rodape {
+        grid-area: rodape;
+        height: 8rem;
+    }
+
+    .conteudo {
+        font-size: 1.6rem;
+        padding: 1.5rem;
+    }
+       
+}
+
+
+@media screen and (min-width: 1920px) {
+    .container {
+        width: 128rem;
+    }
+}
