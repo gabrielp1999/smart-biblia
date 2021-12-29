@@ -6,8 +6,6 @@ html {
     font-size: 10px;
 }
 
-
-
 .estilo {
     border: 0.1rem solid black;
 }
@@ -43,7 +41,7 @@ html {
     padding-bottom: 1rem;
 }
 
-.livros ol {
+.livros ul {
     margin-top: 1rem;
 }
 .livros li {
@@ -80,19 +78,26 @@ html {
         ;
     }
 
+    .centralizarCabecalho {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgba(150, 150, 250, 0.3);
+    }
+
     .cabecalho {
         grid-area: cabecalho;
-        height: 7rem;
+        height: 6rem;
         display: flex;
-        padding-top: 2rem;
-        padding-left: 3rem;
         font-size: 2rem;
+        width: 102.4rem;
     }
 
     .cabecalho img {
         height: 5rem;
         width: 5rem;
-        padding-right: 1rem;
+        margin-right: 1rem;
     }
 
     .sidebar {
