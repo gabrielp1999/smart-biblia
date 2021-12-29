@@ -1,1 +1,1 @@
-# Projeto Minha Bíblia completa com varias versão
+# Projeto Minha Bíblia completa com varias versões
