@@ -17,24 +17,38 @@ html {
 }
 .versoes h4 {
     text-align: center;
-    font-size: 1.7rem;
+    font-size: 2.2rem;
     color: darkblue;
     padding-bottom: 1rem;
 }
 
 
 .versoes ul {
-    margin-left: 0.1rem;
     padding: 1rem;
-    border: 1px solid;
-    border-radius: 10px;
+    border: 0.1rem solid;
+    border-radius: 1rem;
     height: 3rem;
-    width: 26rem;
+    width: 23.5rem;
     display: flex;
     gap: 1rem;
     overflow-x: scroll;
 }
 
+.coresAntigoTestamento li {
+    background-color: #025492;
+}
+
+.coresAntigoTestamento a {
+    color: #f8bf0f;
+} 
+
+.coresNovoTestamento li {
+    background-color: #f8bf0f ;
+}
+
+.coresNovoTestamento a {
+    color: #025492;
+} 
 
 .versoes li {
     list-style: none;
@@ -45,20 +59,22 @@ html {
     margin-top: 1rem;
 }
 .livros li {
-    background-color: #025492;
-    border: 1px solid black;
+    border: 0.1rem solid black;
     padding: 0.5rem;
     height: 2rem;
     margin: 0.5rem;    
+    text-align: center;
 }
 
 .livrosTitulo {
-    background-color: rgba(150, 150, 240, 0.2);
+    background-color: rgba(150, 150, 250, 0.2);
     font-size: 1.6rem;
-    border: 1px solid black;
+    font-weight: bold;
+    border: 0.1rem solid black;
     padding: 0.5rem;
     height: 2rem;
     text-transform: uppercase;
+    text-align: center;
 }
 
 /* VERSÃO DESKTOP */
@@ -78,19 +94,19 @@ html {
         ;
     }
 
-    .centralizarCabecalho {
+    .centralizarCabecalho{
         width: 100%;
         display: flex;
         align-items: center;
         flex-direction: column;
-        background-color: rgba(150, 150, 250, 0.3);
+        background-color: #025492;
     }
 
     .cabecalho {
         grid-area: cabecalho;
         height: 6rem;
         display: flex;
-        font-size: 2rem;
+        font-size: 2.5rem;
         width: 102.4rem;
     }
 
@@ -99,15 +115,22 @@ html {
         width: 5rem;
         margin-right: 1rem;
     }
+/* 
+    .cabecalho h1 {
+        font-size: 0rem;
+        background-color: red;
+    } */
 
     .sidebar {
         grid-area: sidebar;
-        text-align: center;
         padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .sidebar h2 {
-        font-size: 2.2rem;
+        font-size: 3rem;
         margin: 1rem 0; 
     }
 
@@ -120,8 +143,8 @@ html {
     .livros {
         padding: 1.5rem;
         margin-top: 1rem;
-        border: 1px solid black;
-        border-radius: 15px;
+        border: 0.1rem solid black;
+        border-radius: 1.5rem;
         width: 25rem;
     }
     .livros h4 {
@@ -134,7 +157,6 @@ html {
     }
     
     .livros li a {
-        color: #f8bf0f;
         font-size: 1.6rem;
         font-weight: bold;
         text-decoration: none;
@@ -154,11 +176,88 @@ html {
     .rodape {
         grid-area: rodape;
         height: 8rem;
+        width: 102.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: darkgray;
+    }
+    .rodape div {
+        align-items: center;
+        width: 30rem;
+    }
+
+    .rodape img {
+        height: 4rem;
+        width: 4rem;
+    }
+    .rodape a {
+        font-size: 1.6rem;
+        color: darkgray;
+    }
+
+    .centralizarRodaPe{
+        width: 100%;
+        display: flex;
+        background-color: #025492;
+        justify-content: center;
     }
 
     .conteudo {
         font-size: 1.6rem;
         padding: 1.5rem;
+    }
+
+    .capitulos {
+        margin-top: 1rem;
+        border: 0.1rem solid black;
+        width: 26rem;
+        border-radius: 1rem;
+        text-align: center;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grupoCapitulos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+
+    .capitulo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 2.5rem;
+        width: 2.5rem;
+        background-color: #025492;
+        font-size: 1.6rem;
+        text-align: center;
+        color: white;
+    }
+
+
+    .capitulos p {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1.6rem;
+        padding: 0.5rem;
+    }
+
+    #github a {
+        display: flex;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+    }
+
+    #direitosReservados {
+        font-size: 1.2rem;
+        color: white;
     }
        
 }
