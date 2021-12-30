@@ -6,25 +6,56 @@ html {
     font-size: 10px;
 }
 
-.versoes {
-    width: 25.3rem;    
-    height: 6rem;
-    text-align: center;
-}
-.versoes span {
-    font-size: 2.4rem;
-    color: darkblue;
-    padding-bottom: 1rem;
-    font-weight: bold;
+body{
+    font-size: 1.6rem;
 }
 
-.versoes button {
+.centralizarCabecalho{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #025492;
-    border: none;
-    color: white;
-    padding: 0.4rem;
-    border-radius: 0.3rem;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    font-size: 1.8rem;
+    color: #f3f3f3;
+}
+
+.cabecalho img {
+    height: 5rem;
+}
+
+.container {
+    padding: 1rem 1.5rem;
+}
+
+.versoes {
+    width: 100%;
+}
+
+.versoes span {
+    font-size: 2.4rem;
     font-weight: bold;
+    color: #025492;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+.versoes ul {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    overflow-x: scroll;
+    height: 4rem;
 }
 
 .versoes ul::-webkit-scrollbar {
@@ -36,293 +67,69 @@ html {
     border-radius: 1rem;
 }
 
-
-.versoes ul {
-    padding: 1rem;
-    height: 3rem;
-    width: 26.5rem;
-    display: flex;
-    gap: 1rem;
-    overflow-x: scroll;
-    margin-left: -1.7rem;
-}
-
-.coresAntigoTestamento li {
-    background-color: #025492;
-}
-
-.coresAntigoTestamento  li:hover {
-    background-color: #f8bf0f;
-}
-
-.coresAntigoTestamento li:hover a {
-    color: #025492;
-}
-
-.coresNovoTestamento li:hover {
-    background-color: #025492;
-}
-
-.coresNovoTestamento li:hover a {
-    color: #f8bf0f;
-}
-
-.coresAntigoTestamento a {
-    color: #f8bf0f;
-} 
-
-.coresNovoTestamento li {
-    background-color: #f8bf0f ;
-}
-
-.coresNovoTestamento a {
-    color: #025492;
-} 
-
 .versoes li {
     list-style: none;
-    padding-bottom: 1rem;
+
 }
 
-.livros ul {
+.versoes button {
+    background-color: #025492;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    border: none;
+}
+
+#buscaLivro {
     margin-top: 1rem;
 }
-.livros li {
-    border: 0.1rem solid black;
-    padding: 0.5rem;
-    height: 2rem;
-    margin: 0.5rem;    
-    text-align: center;
+
+#filtros {
+    display: none;
 }
 
-.livrosTitulo {
-    font-size: 2.4rem;
-    font-weight: bold;
-    padding: 0.5rem;
-    height: 2rem;
-    text-align: center;
+.conteudo {
+    /* altura da tela - cabeçalho - rodapé - padding - sidebar */
+    min-height: calc(100vh - 7rem - 6rem - 4rem - 7.7rem);
+    margin:1rem 0;
+
 }
 
-/* VERSÃO DESKTOP */
-@media screen and (min-width: 1024px) {
+.centralizarRodaPe {
+    width: 100%;
+    background-color: #025492;
+    color:darkgray;
+    font-size: 1.2rem;
+}
 
-    .container {
-        margin-left: auto;
-        margin-right: auto;
-        width: 102.4rem;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-areas: 
-        "cabecalho cabecalho cabecalho cabecalho"
-        "sidebar conteudo conteudo conteudo"
-        "rodape rodape rodape rodape"
-        ;
-    }
+.rodape {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+}
 
-    .centralizarCabecalho{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        background-color: #025492;
-    }
+.rodape img {
+    height: 4rem;
+}
 
-    .cabecalho {
-        grid-area: cabecalho;
-        height: 6rem;
-        display: flex;
-        font-size: 2.5rem;
-        width: 102.4rem;
-    }
-
-    .cabecalho img {
-        height: 5rem;
-        width: 5rem;
-        margin-right: 1rem;
-    }
-/* 
-    .cabecalho h1 {
-        font-size: 0rem;
-        background-color: red;
-    } */
-
-    .sidebar {
-        grid-area: sidebar;
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .sidebar h2 {
-        font-size: 3rem;
-    }
-
-    #buscaLivro {
-        margin-top: 4rem;
-        padding: 0.5rem;
-        width: 90%;
-    }
-
-    .livros {
-        padding: 1.5rem;
-        margin-top: 1rem;
-        border: 0.1rem solid black;
-        border-radius: 1.5rem;
-        width: 25rem;
-    }
-    .livros h4 {
-        font-size: 1.8rem;
-        padding-bottom:1rem ;
-    }
-
-    .livros li{
-        list-style: none;
-    }
-    
-    .livros li a {
-        font-size: 1.6rem;
-        font-weight: bold;
-        text-decoration: none;
-        width: 100%;
-        display: block;
-    }
-
-
-    .conteudo {
-        grid-area: conteudo;
-        /* altura da tela - cabeçalho - rodapé - padding */
-        min-height: calc(100vh - 6rem - 8rem - 3rem);
-    }
-
-    .rodape {
-        grid-area: rodape;
-        height: 8rem;
-        width: 102.4rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        color: darkgray;
-    }
-    .rodape div {
-        align-items: center;
-        width: 30rem;
-    }
-
-    .rodape img {
-        height: 4rem;
-        width: 4rem;
-    }
-    .rodape a {
-        font-size: 1.6rem;
-        color: darkgray;
-    }
-
-    .centralizarRodaPe{
-        width: 100%;
-        display: flex;
-        background-color: #025492;
-        justify-content: center;
-    }
-
-    .conteudo {
-        font-size: 1.6rem;
-        padding: 1.5rem;
-    }
-
-    .capitulos {
-        margin-top: 1rem;
-        border: 0.1rem solid black;
-        width: 26rem;
-        border-radius: 1rem;
-        text-align: center;
-        padding: 1rem;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .grupoCapitulos {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-        justify-content: center;
-    }
-
-    .capitulo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 2.5rem;
-        width: 2.5rem;
-        background-color: #025492;
-        font-size: 1.6rem;
-        text-align: center;
-        color: white;
-        text-decoration: none;
-    }
-
-
-    .capitulos span {
-        font-weight: bold;
-        font-size: 2.4rem;
-        padding: 0.5rem;
-    }
-
-    #github a {
-        display: flex;
-        align-items: center;
-        color: white;
-        text-decoration: none;
-    }
-
-    #github:hover {
-        animation: move;
-        animation-duration: 1.5s;        
-    }
-
-    #direitosReservados {
-        font-size: 1.2rem;
-        color: white;
-    }
-       
+#github a{
+    display: flex;
+    align-items: center;
+    color:darkgray;
+    text-decoration: none;
 }
 
 
-@media screen and (min-width: 1920px) {
-    .container {
-        width: 128rem;
-    }
-    .cabecalho {
-        width: 128rem;
-    }
 
-    .rodape {
-        width: 128rem;
-    }
-}
 
-/* animações */
 
-@keyframes move {
-    from {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
 
-  @keyframes fade {
-    from {
-      opacity: 0;
-      transform: translateX(0.9);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(1);
-    }
-}
+
+
+
+
+
+
+

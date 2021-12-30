@@ -9,9 +9,12 @@
     <title>Minha Bíblia</title>
 </head>
 <body>
-    <div class="centralizarCabecalho">
-        <header class="cabecalho"><img src="./img/logo.png" alt=""><h1>Minha Bíblia</h1></header>
-    </div>
+    <header class="centralizarCabecalho">
+        <div class="cabecalho">
+            <img src="./img/logo.png" alt="">
+            <h1>Minha Bíblia</h1>
+        </div>
+    </header>
     <div class="container">
 
 
@@ -30,72 +33,49 @@
                     <li><button>JAH</button></li>
                     <li><button>PKJ</button></li>
                     <li><button>MKL</button></li>
-                    <li><button>KLI</button></li>
-                    <li><button>JAH</button></li>
-                    <li><button>PKJ</button></li>
-                    <li><button>MKL</button></li>
-                    <li><button>KLI</button></li>
-                    <li><button>JAH</button></li>
-                    <li><button>PKJ</button></li>
-                    <li><button>MKL</button></li>
-                    <li><button>KLI</button></li>
-                    <li><button>JAH</button></li>
-                    <li><button>PKJ</button></li>
-                    <li><button>MKL</button></li>
-                    <li><button>KLI</button></li>
-                    <li><button>JAH</button></li>
-                    <li><button>PKJ</button></li>
-                    <li><button>MKL</button></li>
-                    <li><button>KLI</button></li>
-                    <li><button>JAH</button></li>
-                    <li><button>PKJ</button></li>
-                    <li><button>MKL</button></li>
-                    <li><button>KLI</button></li>
-                    <li><button>JAH</button></li>
-                    <li><button>PKJ</button></li>
-                    <li><button>MKL</button></li>
-                    <li><button>KLI</button></li>
                 </ul>
             </div>
-    
             
-            <input id="buscaLivro" placeholder="Digite o nome de um livro" type="text">
+            <div id="filtros">
+            
+                <input id="buscaLivro" placeholder="Digite o nome de um livro" type="text">
 
-            <div class="livros coresAntigoTestamento">
-                <div class="livrosTitulo">
-                    Antigo Testamento
+                <div class="livros coresAntigoTestamento">
+                    <div class="livrosTitulo">
+                        Antigo Testamento
+                    </div>
+                    <ul>
+                        <li><a href="">Gênesis</a></li>
+                        <li><a href="">Gênesis</a></li>
+                    </ul>
                 </div>
-                <ul>
-                    <li><a href="">Gênesis</a></li>
-                    <li><a href="">Gênesis</a></li>
-                </ul>
+
+                <div class="livros coresNovoTestamento">
+                    <div class="livrosTitulo">
+                        Novo Testamento
+                    </div>
+                    <ul class="coresNovotestamento">
+                        <li><a href="">Matheus</a></li>
+                        <li><a href="">Matheus</a></li>
+                        <li><a href="">Matheus</a></li>
+                    </ul>
+                </div>
+
+                <div class="capitulos">
+                    <span>Capítulos</span>
+                    <div class="grupoCapitulos">
+                        <a class="capitulo" href="">1</a>
+                        <a class="capitulo" href="">2</a>
+                        <a class="capitulo" href="">3</a>
+                        <a class="capitulo" href="">4</a>
+                        <a class="capitulo" href="">5</a>
+                        <a class="capitulo" href="">6</a>
+                        <a class="capitulo" href="">7</a>
+                        <a class="capitulo" href="">8</a>
+                    </div>
             </div>
 
-            <div class="livros coresNovoTestamento">
-                <div class="livrosTitulo">
-                    Novo Testamento
-                </div>
-                <ul class="coresNovotestamento">
-                    <li><a href="">Matheus</a></li>
-                    <li><a href="">Matheus</a></li>
-                    <li><a href="">Matheus</a></li>
-                </ul>
-            </div>
-
-            <div class="capitulos">
-                <span>Capítulos</span>
-                <div class="grupoCapitulos">
-                    <a class="capitulo" href="">1</a>
-                    <a class="capitulo" href="">2</a>
-                    <a class="capitulo" href="">3</a>
-                    <a class="capitulo" href="">4</a>
-                    <a class="capitulo" href="">5</a>
-                    <a class="capitulo" href="">6</a>
-                    <a class="capitulo" href="">7</a>
-                    <a class="capitulo" href="">8</a>
-                </div>
-            </div>
-
+        </div>
         </nav>
         
         <main class="conteudo">
@@ -107,17 +87,20 @@
         </main> 
 
     </div>
-    <div class="centralizarRodaPe">
-        <footer class="rodape">
+    <footer class="centralizarRodaPe">
+        <div class="rodape">
             <div id="direitosReservados"> 
                 Copryght 2021
             </div>
             
             <div id="github"> 
-                <a target="_blank" href="https://github.com/gabrielp1999?tab=repositories">Desenvolvido por Gabriel Pereira<img src="./img/github.png" alt=""></a>
+                <a target="_blank" href="https://github.com/gabrielp1999?tab=repositories">
+                    Desenvolvido por Gabriel Pereira
+                    <img src="./img/github.png" alt="">
+            </a>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
     
 </body>
 </html>
