@@ -25,13 +25,13 @@ html {
 
 .versoes ul {
     padding: 1rem;
-    border: 0.1rem solid;
-    border-radius: 1rem;
     height: 3rem;
-    width: 23.5rem;
+    width: 26.5rem;
     display: flex;
     gap: 1rem;
     overflow-x: scroll;
+    margin-left: -1.7rem;
+    background-color: rgba(150, 150, 250, 0.5);
 }
 
 .coresAntigoTestamento li {
@@ -131,7 +131,6 @@ html {
 
     .sidebar h2 {
         font-size: 3rem;
-        margin: 1rem 0; 
     }
 
     #buscaLivro {
@@ -165,7 +164,8 @@ html {
     }
 
     .livros li a:hover {
-        text-decoration: underline;
+        animation: fade;
+        animation-duration: 500ms;    
     }
 
     .conteudo {
@@ -255,6 +255,11 @@ html {
         text-decoration: none;
     }
 
+    #github:hover {
+        animation: move;
+        animation-duration: 1.5s;        
+    }
+
     #direitosReservados {
         font-size: 1.2rem;
         color: white;
@@ -266,5 +271,29 @@ html {
 @media screen and (min-width: 1920px) {
     .container {
         width: 128rem;
+    }
+}
+
+/* animações */
+
+@keyframes move {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+      transform: translateX(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(1);
     }
 }
