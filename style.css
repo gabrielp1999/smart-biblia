@@ -294,6 +294,13 @@ html {
     .container {
         width: 128rem;
     }
+    .cabecalho {
+        width: 128rem;
+    }
+
+    .rodape {
+        width: 128rem;
+    }
 }
 
 /* animações */
