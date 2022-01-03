@@ -10,5 +10,25 @@ function onClickBtnFiltros() {
         setaFiltros.src = "./img/up.png";
     }
 
-
 }
+
+async function buscarVersiculoAleatorio() {
+
+    let resultado = await axios ("https://www.abibliadigital.com.br/api/verses/nvi/random");
+
+    const versiculoAleatorio = document.getElementById('versiculoAleatorio');
+    const livroAleatorio = document.getElementById('livroAleatorio');
+
+    let conteudoLivro = `${resultado.data.book.name} ${resultado.data.chapter}.${resultado.data.number} `
+
+    livroAleatorio.innerHTML = conteudoLivro;
+    versiculoAleatorio.innerHTML = resultado.data.text;
+
+    console.log(resultado.data)
+}
+
+buscarVersiculoAleatorio()
+
+
+
+
