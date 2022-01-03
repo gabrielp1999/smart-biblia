@@ -1,30 +1,67 @@
 * { 
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 html {
     font-size: 10px;
 }
 
-.versoes {
-    width: 25.3rem;    
-    height: 6rem;
-    text-align: center;
-}
-.versoes span {
-    font-size: 2.4rem;
-    color: darkblue;
-    padding-bottom: 1rem;
-    font-weight: bold;
+body{
+    font-size: 1.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ecedf3;
 }
 
-.versoes button {
+.englobaCabecalho{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #025492;
-    border: none;
-    color: white;
-    padding: 0.4rem;
-    border-radius: 0.3rem;
+}
+
+.cabecalho a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    font-size: 1.8rem;
+    color: #f3f3f3;
+    text-decoration: none;
+}
+
+.cabecalho a img {
+    height: 5rem;
+}
+
+.container {
+    padding: 1rem 1.5rem;
+}
+
+.versoes {
+    width: 100%;
+}
+
+.versoes span {
+    font-size: 2.4rem;
     font-weight: bold;
+    color: #025492;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+.versoes ul {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    overflow-x: scroll;
+    height: 4rem;
 }
 
 .versoes ul::-webkit-scrollbar {
@@ -36,293 +73,238 @@ html {
     border-radius: 1rem;
 }
 
+.versoes li {
+    list-style: none;
 
-.versoes ul {
-    padding: 1rem;
-    height: 3rem;
-    width: 26.5rem;
-    display: flex;
-    gap: 1rem;
-    overflow-x: scroll;
-    margin-left: -1.7rem;
 }
 
-.coresAntigoTestamento li {
+.versoes button {
+    background-color: #025492;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    border: none;
+}
+
+.tituloCaixa {
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+#btnFiltrosLivros {
+    display: flex;
+    justify-content: space-between;
+    border: 0.1rem solid #a3a3a3;
+    background-color: #fff;
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+#btnFiltrosLivros img {
+    width: 2rem;
+}
+
+#filtrosLivros {
+    display: none;
+}
+
+#inputIcone {
+    position: relative;
+}
+
+#buscaLivro {
+    width: 100%;
+    padding: 0.5rem;
+}
+
+#imgLupa {
+    width: 2.4rem;
+    position: absolute;
+    right: 1rem;
+    top: 0.2rem;
+}
+
+.livros {
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border:0.1rem solid #a3a3a3;
+    border-radius: 1.5rem;
+}
+
+.livros li {
+    list-style: none;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.livros li a {
+    font-weight: bold;
+    text-decoration: none;
+    width: 100%;
+    display: block;
+}
+
+.livrosAntigoTestamento li {
     background-color: #025492;
 }
 
-.coresAntigoTestamento  li:hover {
+
+.livrosAntigoTestamento a {
+    color: #f8bf0f;
+}
+
+.livrosNovoTestamento li {
     background-color: #f8bf0f;
 }
 
-.coresAntigoTestamento li:hover a {
-    color: #025492;
-}
-
-.coresNovoTestamento li:hover {
-    background-color: #025492;
-}
-
-.coresNovoTestamento li:hover a {
-    color: #f8bf0f;
-}
-
-.coresAntigoTestamento a {
-    color: #f8bf0f;
-} 
-
-.coresNovoTestamento li {
-    background-color: #f8bf0f ;
-}
-
-.coresNovoTestamento a {
-    color: #025492;
-} 
-
-.versoes li {
-    list-style: none;
-    padding-bottom: 1rem;
-}
-
-.livros ul {
+.capitulos {
+    border:0.1rem solid #a3a3a3;
+    border-radius: 1.5rem;
     margin-top: 1rem;
-}
-.livros li {
-    border: 0.1rem solid black;
-    padding: 0.5rem;
-    height: 2rem;
-    margin: 0.5rem;    
-    text-align: center;
+    padding: 1rem;
 }
 
-.livrosTitulo {
-    font-size: 2.4rem;
-    font-weight: bold;
-    padding: 0.5rem;
-    height: 2rem;
-    text-align: center;
+.grupoCapitulos {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap:wrap;
+    justify-content: center;
 }
 
-/* VERSÃO DESKTOP */
-@media screen and (min-width: 1024px) {
+.grupoCapitulos a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #025492;
+    color: #fff;
+    height: 2.5rem;
+    width: 2.5rem;
+    text-decoration: none;
+}
+
+
+
+.conteudo {
+    /* altura da tela - cabeçalho - rodapé - padding - sidebar - btn-filtros */
+    min-height: calc(100vh - 7rem - 6rem - 6rem - 7.7rem - 5.3rem);
+    margin:2rem 0;
+    padding: 0 2rem;
+}
+
+.centralizarRodaPe {
+    width: 100%;
+    background-color: #025492;
+    color:darkgray;
+    font-size: 1.2rem;
+}
+
+.rodape {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+}
+
+.rodape img {
+    height: 4rem;
+}
+
+#github a{
+    display: flex;
+    align-items: center;
+    color:darkgray;
+    text-decoration: none;
+}
+
+#versiculoAleatorio {
+    margin-top: 2rem;
+}
+
+@media screen and (min-width:1024px) {
+
+
+    #btnFiltrosLivros{
+        display: none;
+    }
+
+    #filtrosLivros {
+        display: block;
+    }
+
 
     .container {
         margin-left: auto;
         margin-right: auto;
         width: 102.4rem;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-areas: 
-        "cabecalho cabecalho cabecalho cabecalho"
-        "sidebar conteudo conteudo conteudo"
-        "rodape rodape rodape rodape"
-        ;
+        grid-template-columns: 1fr 3fr;
     }
 
-    .centralizarCabecalho{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        background-color: #025492;
+    .englobaCabecalho {
+        height: 5rem;
     }
+
 
     .cabecalho {
-        grid-area: cabecalho;
-        height: 6rem;
         display: flex;
-        font-size: 2.5rem;
-        width: 102.4rem;
-    }
-
-    .cabecalho img {
-        height: 5rem;
-        width: 5rem;
-        margin-right: 1rem;
-    }
-/* 
-    .cabecalho h1 {
-        font-size: 0rem;
-        background-color: red;
-    } */
-
-    .sidebar {
-        grid-area: sidebar;
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
         align-items: center;
+        height: 5rem;
+        width: 102.4rem;
+        padding-left: 1.5rem;
+        
     }
 
-    .sidebar h2 {
-        font-size: 3rem;
+    .cabecalho a img {
+        height: 3.5rem;
     }
 
-    #buscaLivro {
-        margin-top: 4rem;
-        padding: 0.5rem;
-        width: 90%;
+    .cabecalho a h1 {
+        font-size: 2.4rem;
     }
 
-    .livros {
-        padding: 1.5rem;
-        margin-top: 1rem;
-        border: 0.1rem solid black;
-        border-radius: 1.5rem;
-        width: 25rem;
-    }
-    .livros h4 {
-        font-size: 1.8rem;
-        padding-bottom:1rem ;
+    
+
+    .conteudo {
+        /* altura da tela - cabeçalho - rodapé - padding*/
+        min-height: calc(100vh - 5rem - 6rem - 2rem);
+        margin: 0;
     }
 
-    .livros li{
-        list-style: none;
+    .livrosAntigoTestamento li:hover {
+        background-color: #f8bf0f;
     }
     
-    .livros li a {
-        font-size: 1.6rem;
-        font-weight: bold;
-        text-decoration: none;
-        width: 100%;
-        display: block;
+    .livrosAntigoTestamento li:hover a {
+        color: #025492;
     }
 
-
-    .conteudo {
-        grid-area: conteudo;
-        /* altura da tela - cabeçalho - rodapé - padding */
-        min-height: calc(100vh - 6rem - 8rem - 3rem);
-    }
-
-    .rodape {
-        grid-area: rodape;
-        height: 8rem;
-        width: 102.4rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        color: darkgray;
-    }
-    .rodape div {
-        align-items: center;
-        width: 30rem;
-    }
-
-    .rodape img {
-        height: 4rem;
-        width: 4rem;
-    }
-    .rodape a {
-        font-size: 1.6rem;
-        color: darkgray;
-    }
-
-    .centralizarRodaPe{
-        width: 100%;
-        display: flex;
+    .livrosNovoTestamento li:hover {
         background-color: #025492;
-        justify-content: center;
     }
-
-    .conteudo {
-        font-size: 1.6rem;
-        padding: 1.5rem;
+    
+    .livrosNovoTestamento li:hover a {
+        color: #f8bf0f;
     }
-
-    .capitulos {
-        margin-top: 1rem;
-        border: 0.1rem solid black;
-        width: 26rem;
-        border-radius: 1rem;
-        text-align: center;
-        padding: 1rem;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .grupoCapitulos {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-        justify-content: center;
-    }
-
-    .capitulo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 2.5rem;
-        width: 2.5rem;
-        background-color: #025492;
-        font-size: 1.6rem;
-        text-align: center;
-        color: white;
-        text-decoration: none;
-    }
+    
 
 
-    .capitulos span {
-        font-weight: bold;
-        font-size: 2.4rem;
-        padding: 0.5rem;
-    }
 
-    #github a {
-        display: flex;
-        align-items: center;
-        color: white;
-        text-decoration: none;
-    }
-
-    #github:hover {
-        animation: move;
-        animation-duration: 1.5s;        
-    }
-
-    #direitosReservados {
-        font-size: 1.2rem;
-        color: white;
-    }
-       
 }
 
 
-@media screen and (min-width: 1920px) {
-    .container {
-        width: 128rem;
-    }
-    .cabecalho {
-        width: 128rem;
-    }
 
-    .rodape {
-        width: 128rem;
-    }
-}
 
-/* animações */
 
-@keyframes move {
-    from {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
 
-  @keyframes fade {
-    from {
-      opacity: 0;
-      transform: translateX(0.9);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(1);
-    }
-}
+
+
+
+
+
