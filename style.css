@@ -1,6 +1,9 @@
 * { 
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 html {
     font-size: 10px;
@@ -8,9 +11,11 @@ html {
 
 body{
     font-size: 1.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ecedf3;
 }
 
-.centralizarCabecalho{
+.englobaCabecalho{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -18,7 +23,7 @@ body{
     background-color: #025492;
 }
 
-.cabecalho {
+.cabecalho a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,9 +31,10 @@ body{
     margin: 1rem 0;
     font-size: 1.8rem;
     color: #f3f3f3;
+    text-decoration: none;
 }
 
-.cabecalho img {
+.cabecalho a img {
     height: 5rem;
 }
 
@@ -81,19 +87,115 @@ body{
     border: none;
 }
 
-#buscaLivro {
-    margin-top: 1rem;
+.tituloCaixa {
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding-bottom: 1rem;
+    text-align: center;
 }
 
-#filtros {
+#btnFiltrosLivros {
+    display: flex;
+    justify-content: space-between;
+    border: 0.1rem solid #a3a3a3;
+    background-color: #fff;
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+#btnFiltrosLivros img {
+    width: 2rem;
+}
+
+#filtrosLivros {
     display: none;
 }
 
-.conteudo {
-    /* altura da tela - cabeçalho - rodapé - padding - sidebar */
-    min-height: calc(100vh - 7rem - 6rem - 4rem - 7.7rem);
-    margin:1rem 0;
+#inputIcone {
+    position: relative;
+}
 
+#buscaLivro {
+    width: 100%;
+    padding: 0.5rem;
+}
+
+#imgLupa {
+    width: 2.4rem;
+    position: absolute;
+    right: 1rem;
+    top: 0.2rem;
+}
+
+.livros {
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border:0.1rem solid #a3a3a3;
+    border-radius: 1.5rem;
+}
+
+.livros li {
+    list-style: none;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.livros li a {
+    font-weight: bold;
+    text-decoration: none;
+    width: 100%;
+    display: block;
+}
+
+.livrosAntigoTestamento li {
+    background-color: #025492;
+}
+
+
+.livrosAntigoTestamento a {
+    color: #f8bf0f;
+}
+
+.livrosNovoTestamento li {
+    background-color: #f8bf0f;
+}
+
+.capitulos {
+    border:0.1rem solid #a3a3a3;
+    border-radius: 1.5rem;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.grupoCapitulos {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+.grupoCapitulos a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #025492;
+    color: #fff;
+    height: 2.5rem;
+    width: 2.5rem;
+    text-decoration: none;
+}
+
+
+
+.conteudo {
+    /* altura da tela - cabeçalho - rodapé - padding - sidebar - btn-filtros */
+    min-height: calc(100vh - 7rem - 6rem - 6rem - 7.7rem - 5.3rem);
+    margin:2rem 0;
+    padding: 0 2rem;
 }
 
 .centralizarRodaPe {
@@ -121,7 +223,80 @@ body{
     text-decoration: none;
 }
 
+#versiculoAleatorio {
+    margin-top: 2rem;
+}
 
+@media screen and (min-width:1024px) {
+
+
+    #btnFiltrosLivros{
+        display: none;
+    }
+
+    #filtrosLivros {
+        display: block;
+    }
+
+
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 102.4rem;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+    }
+
+    .englobaCabecalho {
+        height: 5rem;
+    }
+
+
+    .cabecalho {
+        display: flex;
+        align-items: center;
+        height: 5rem;
+        width: 102.4rem;
+        padding-left: 1.5rem;
+        
+    }
+
+    .cabecalho a img {
+        height: 3.5rem;
+    }
+
+    .cabecalho a h1 {
+        font-size: 2.4rem;
+    }
+
+    
+
+    .conteudo {
+        /* altura da tela - cabeçalho - rodapé - padding*/
+        min-height: calc(100vh - 5rem - 6rem - 2rem);
+        margin: 0;
+    }
+
+    .livrosAntigoTestamento li:hover {
+        background-color: #f8bf0f;
+    }
+    
+    .livrosAntigoTestamento li:hover a {
+        color: #025492;
+    }
+
+    .livrosNovoTestamento li:hover {
+        background-color: #025492;
+    }
+    
+    .livrosNovoTestamento li:hover a {
+        color: #f8bf0f;
+    }
+    
+
+
+
+}
 
 
 

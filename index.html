@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/icon.ico"type="image/x-icon"/>
     <link rel="stylesheet" href="./style.css">
-    <title>Minha Bíblia</title>
+    <title>Smart Bíblia</title>
 </head>
 <body>
-    <header class="centralizarCabecalho">
+    <header class="englobaCabecalho">
         <div class="cabecalho">
-            <img src="./img/logo.png" alt="">
-            <h1>Minha Bíblia</h1>
+            <a href="/index.html">
+                <img src="./img/logo.png" alt="">
+                <h1>Smart Bíblia</h1>
+            </a>
         </div>
     </header>
     <div class="container">
@@ -21,69 +23,54 @@
         <nav class="sidebar">
             <div class="versoes">
                 <span>Versões</span>
-                <ul>
-                    <li><button>JAH</button></li>
-                    <li><button>PKJ</button></li>
-                    <li><button>MKL</button></li>
-                    <li><button>KLI</button></li>
-                    <li><button>JAH</button></li>
-                    <li><button>PKJ</button></li>
-                    <li><button>MKL</button></li>
-                    <li><button>KLI</button></li>
-                    <li><button>JAH</button></li>
-                    <li><button>PKJ</button></li>
-                    <li><button>MKL</button></li>
+                <ul id="ulVersoes">
+                    <li><button href="">Mat</button></li>
+                    <li><button href="">Mat</button></li>
+                    <li><button href="">Mag</button></li>
                 </ul>
-            </div>
-            
-            <div id="filtros">
-            
-                <input id="buscaLivro" placeholder="Digite o nome de um livro" type="text">
 
-                <div class="livros coresAntigoTestamento">
-                    <div class="livrosTitulo">
+            </div>
+
+            <button onclick="onClickBtnFiltros()" id="btnFiltrosLivros">
+                Livros <img id="imgSetaFiltros" src="/img/down.png" alt="">
+            </button>
+
+            <div id="filtrosLivros">
+            
+                <div id="inputIcone"> 
+                    <input id="buscaLivro" placeholder="Digite o nome de um livro" type="text">
+                    <img id="imgLupa" src="/img/lupa.png" alt="">
+                </div>
+
+                <div class="livros">
+                    <div class="tituloCaixa">
                         Antigo Testamento
                     </div>
-                    <ul>
-                        <li><a href="">Gênesis</a></li>
-                        <li><a href="">Gênesis</a></li>
+                    <ul class="livrosAntigoTestamento">
+
+                        <li><a href="">Matheus</a></li>
+                        <li><a href="">Matheus</a></li>
+                        <li><a href="">Matheus</a></li>
                     </ul>
                 </div>
 
-                <div class="livros coresNovoTestamento">
-                    <div class="livrosTitulo">
+                <div class="livros">
+                    <div class="tituloCaixa">
                         Novo Testamento
                     </div>
-                    <ul class="coresNovotestamento">
+                    <ul class="livrosNovoTestamento">
                         <li><a href="">Matheus</a></li>
                         <li><a href="">Matheus</a></li>
                         <li><a href="">Matheus</a></li>
                     </ul>
                 </div>
-
-                <div class="capitulos">
-                    <span>Capítulos</span>
-                    <div class="grupoCapitulos">
-                        <a class="capitulo" href="">1</a>
-                        <a class="capitulo" href="">2</a>
-                        <a class="capitulo" href="">3</a>
-                        <a class="capitulo" href="">4</a>
-                        <a class="capitulo" href="">5</a>
-                        <a class="capitulo" href="">6</a>
-                        <a class="capitulo" href="">7</a>
-                        <a class="capitulo" href="">8</a>
-                    </div>
-            </div>
 
         </div>
         </nav>
         
         <main class="conteudo">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis laudantium totam molestiae nam aliquam. Ullam neque obcaecati facere repellendus quis sunt numquam beatae eaque alias incidunt. Quod nemo ex ipsum!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero perferendis excepturi incidunt neque voluptas nulla mollitia cupiditate harum molestias. Dolorem ipsum minima laudantium officiis itaque esse laborum fugit porro incidunt!
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis laudantium totam molestiae nam aliquam. Ullam neque obcaecati facere repellendus quis sunt numquam beatae eaque alias incidunt. Quod nemo ex ipsum!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero perferendis excepturi incidunt neque voluptas nulla mollitia cupiditate harum molestias. Dolorem ipsum minima laudantium officiis itaque esse laborum fugit porro incidunt!
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis laudantium totam molestiae nam aliquam. Ullam neque obcaecati facere repellendus quis sunt numquam beatae eaque alias incidunt. Quod nemo ex ipsum
+            <h2 id="livroAleatorio">João 1</h2>
+            <div id="versiculoAleatorio">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis laudantium totam molestiae nam aliquam. Ullam neque obcaecati facere repellendus quis sunt numquam beatae eaque alias incidunt. Quod nemo ex ipsum!</div> 
         </main> 
 
     </div>
@@ -101,6 +88,7 @@
             </div>
         </div>
     </footer>
-    
+
+    <script src="./js/main.js"></script>
 </body>
 </html>
