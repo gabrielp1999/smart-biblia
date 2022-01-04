@@ -294,12 +294,21 @@ body{
     .livrosNovoTestamento li:hover a {
         color: #f8bf0f;
     }
-    
 
 }
 
 
-
+@keyframes move {
+    from {
+      opacity: 0;
+      transform: translateX(-35%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+  
 
 
 
