@@ -43,6 +43,11 @@ async function buscarVersiculoAleatorio() {
     versiculoAleatorio.innerHTML = api.text;
 }
 
+function onClickVersao(sigla) {
+    versaoSelecionada = sigla;
+    buscarVersiculoAleatorio();
+}
+
 async function buscarVersoes() {
     const resultado = await axios.get(`${linkApi}/versions`, opcoesAPI);
 
@@ -51,7 +56,7 @@ async function buscarVersoes() {
     let conteudoVersao = ``;
 
     for(let versao of resultado.data) {
-        conteudoVersao += `<li><button href="">${versao.version.toUpperCase()}</button></li>`
+        conteudoVersao += `<li><button onclick="onClickVersao('${versao.version}')">${versao.version.toUpperCase()}</button></li>`
     }
 
     ulVersoes.innerHTML = conteudoVersao;
