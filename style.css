@@ -5,6 +5,11 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
+
+a:visited {
+
+}
+
 html {
     font-size: 10px;
 }
@@ -152,12 +157,17 @@ body{
     display: block;
 }
 
+
 .livrosAntigoTestamento li {
     background-color: #025492;
 }
 
+.livrosNovoTestamento a:visited{
+    color: #025492;
+}
 
-.livrosAntigoTestamento a {
+.livrosAntigoTestamento a, 
+.livrosAntigoTestamento a:visited {
     color: #f8bf0f;
 }
 
@@ -189,8 +199,6 @@ body{
     width: 2.5rem;
     text-decoration: none;
 }
-
-
 
 .conteudo {
     /* altura da tela - cabeçalho - rodapé - padding - sidebar - btn-filtros */
@@ -240,7 +248,6 @@ body{
         display: block;
     }
 
-
     .container {
         margin-left: auto;
         margin-right: auto;
@@ -253,14 +260,12 @@ body{
         height: 5rem;
     }
 
-
     .cabecalho {
         display: flex;
         align-items: center;
         height: 5rem;
         width: 102.4rem;
-        padding-left: 1.5rem;
-        
+        padding-left: 1.5rem;        
     }
 
     .cabecalho a img {
@@ -270,8 +275,6 @@ body{
     .cabecalho a h1 {
         font-size: 2.4rem;
     }
-
-    
 
     .conteudo {
         /* altura da tela - cabeçalho - rodapé - padding*/
@@ -293,6 +296,16 @@ body{
     
     .livrosNovoTestamento li:hover a {
         color: #f8bf0f;
+    }
+
+    .rodape {
+        width: 102.4rem;
+        justify-content: space-between;
+    }
+
+    .centralizarRodaPe {
+        display: flex;
+        justify-content: center;
     }
 
 }
