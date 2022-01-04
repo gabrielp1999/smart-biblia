@@ -1,11 +1,15 @@
 let listaLivros = [];
+const opcoesAPI = {
+    headers: {
+        Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ik1vbiBKYW4gMDMgMjAyMiAyMjoyMDo1MCBHTVQrMDAwMC5mbGlwZ2dzQGdtYWlsLmNvbSIsImlhdCI6MTY0MTI0ODQ1MH0.pUjeniyc77c0NC8z3uKsj0AmggL-i_voe10kVhDZu84"
+    }
+};
+
+const linkApi = "https://www.abibliadigital.com.br/api";
+let versaoSelecionada = "nvi";
 
  async function encontrarLivros(){
-    let resultado = await axios.get("https://www.abibliadigital.com.br/api/books", {
-        headers: {
-            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ik1vbiBKYW4gMDMgMjAyMiAyMjoyMDo1MCBHTVQrMDAwMC5mbGlwZ2dzQGdtYWlsLmNvbSIsImlhdCI6MTY0MTI0ODQ1MH0.pUjeniyc77c0NC8z3uKsj0AmggL-i_voe10kVhDZu84"
-        }
-    });
+    let resultado = await axios.get(`${linkApi}/books`, opcoesAPI);
 
     listaLivros = resultado.data;
     buscarLivrosVelhoTestamento();
@@ -27,33 +31,24 @@ function onClickBtnFiltros() {
 }
 
 async function buscarVersiculoAleatorio() {
-
-    const resultado = await axios.get("https://www.abibliadigital.com.br/api/verses/nvi/random", {
-        headers: {
-            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ik1vbiBKYW4gMDMgMjAyMiAyMjoyMDo1MCBHTVQrMDAwMC5mbGlwZ2dzQGdtYWlsLmNvbSIsImlhdCI6MTY0MTI0ODQ1MH0.pUjeniyc77c0NC8z3uKsj0AmggL-i_voe10kVhDZu84"
-        }
-    });
+    const resultado = await axios.get(`${linkApi}/verses/${versaoSelecionada}/random`, opcoesAPI);
+    const api = resultado.data;
 
     const versiculoAleatorio = document.getElementById('versiculoAleatorio');
     const livroAleatorio = document.getElementById('livroAleatorio');
 
-    let conteudoLivro = `${resultado.data.book.name} ${resultado.data.chapter}:${resultado.data.number} `
+    let conteudoLivro = `${api.book.name} ${api.chapter}:${api.number} `
 
     livroAleatorio.innerHTML = conteudoLivro;
-    versiculoAleatorio.innerHTML = resultado.data.text;
+    versiculoAleatorio.innerHTML = api.text;
 }
 
-
 async function buscarVersoes() {
-    const resultado = await axios.get("https://www.abibliadigital.com.br/api/versions", {
-        headers: {
-            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ik1vbiBKYW4gMDMgMjAyMiAyMjoyMDo1MCBHTVQrMDAwMC5mbGlwZ2dzQGdtYWlsLmNvbSIsImlhdCI6MTY0MTI0ODQ1MH0.pUjeniyc77c0NC8z3uKsj0AmggL-i_voe10kVhDZu84"
-        }
-    });
+    const resultado = await axios.get(`${linkApi}/versions`, opcoesAPI);
 
     const ulVersoes = document.getElementById('ulVersoes');
 
-    let conteudoVersao = ``
+    let conteudoVersao = ``;
 
     for(let versao of resultado.data) {
         conteudoVersao += `<li><button href="">${versao.version.toUpperCase()}</button></li>`
@@ -64,25 +59,13 @@ async function buscarVersoes() {
 }
 
 async function buscarLivrosVelhoTestamento() {
-    // let resultado = await axios.get("https://www.abibliadigital.com.br/api/books", {
-    //     headers: {
-    //         Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ik1vbiBKYW4gMDMgMjAyMiAyMjoyMDo1MCBHTVQrMDAwMC5mbGlwZ2dzQGdtYWlsLmNvbSIsImlhdCI6MTY0MTI0ODQ1MH0.pUjeniyc77c0NC8z3uKsj0AmggL-i_voe10kVhDZu84"
-    //     }
-    // });
-    // let biblia = resultado.data;
-
     const livrosAntigoTestamento = document.querySelector('.livrosAntigoTestamento');
 
     let filtrarLivrosVT = listaLivros.filter(function(el){
         return el.testament === "VT";
     })
 
-
-    let conteudo = "";
-    for(let livro of filtrarLivrosVT){
-        conteudo += `<li><a href="">${livro.name}</a></li>`
-    }
-
+    const conteudo = fazerForLista(filtrarLivrosVT);
 
     livrosAntigoTestamento.innerHTML = conteudo;
 }
@@ -94,12 +77,7 @@ async function buscarLivrosNovoTestamento() {
         return el.testament === "NT";
     })
 
-
-    let conteudo = "";
-    for(let livro of filtrarLivrosNT){
-        conteudo += `<li><a href="">${livro.name}</a></li>`
-    }
-
+    const conteudo = fazerForLista(filtrarLivrosNT);
 
     livrosNovoTestamento.innerHTML = conteudo;
 }
@@ -116,37 +94,33 @@ async function buscarLivro(elemento){
         return resposta;
     })
 
-    let filtrarNT = filtrarLivro.filter(function(el){
-        let resultado = el.testament === "NT";
-        return resultado;
-    });
+    const filtrarNT = fazerFiltro(filtrarLivro,"NT");
+    const filtrarVT = fazerFiltro(filtrarLivro, "VT");
 
-    let filtrarVT = filtrarLivro.filter(function(el){
-        let resultado = el.testament === "VT";
-        return resultado;
-    });
-
-    
-    let conteudoNT = "";
-    let conteudoVT = "";
-
-    for(let livro of filtrarNT){
-        conteudoNT += `<li><a href="">${livro.name}</a></li>`
-    }
-
-    for(let livro of filtrarVT){
-        conteudoVT += `<li><a href="">${livro.name}</a></li>`
-    }
+    const conteudoNT = fazerForLista(filtrarNT);
+    const conteudoVT = fazerForLista(filtrarVT);
 
     livrosNovoTestamento.innerHTML = conteudoNT;
     livrosVelhoTestamento.innerHTML = conteudoVT;
 }
 
-encontrarLivros()
+function fazerFiltro(filtrarLivro, livro){
+    let filtrar = filtrarLivro.filter(function(el){
+        let resultado = el.testament === livro;
+        return resultado;
+    });
+
+    return filtrar;
+}
+
+function fazerForLista(testamentos) {
+    let conteudo = "";
+    for(let livro of testamentos){
+       conteudo += `<li><a href="">${livro.name}</a></li>`
+    }
+    return conteudo;
+}
+
+encontrarLivros();
 buscarVersoes();
 buscarVersiculoAleatorio();
-
-
-
-
-
