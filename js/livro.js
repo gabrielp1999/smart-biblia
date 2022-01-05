@@ -18,8 +18,12 @@ async function buscarNomeLivro(){
     let conteudo = "";
 
     for (let i = 0; i < livro.chapters; i++) {
+        let href = `/livro.html?sigla=${siglaLivro}&capitulo=${numeroCapitulo}`;
+        if (window.location.href.indexOf(prefixURL) >= 0) {
+            href = `/${prefixURL}${href}`;
+        }
         const numeroCapitulo = i+1;
-       conteudo += `<a class="capitulo" href="/livro.html?sigla=${siglaLivro}&capitulo=${numeroCapitulo}">${numeroCapitulo}</a>`
+       conteudo += `<a class="capitulo" href="${href}">${numeroCapitulo}</a>`
     }
 
     grupoCapitulos.innerHTML = conteudo;
