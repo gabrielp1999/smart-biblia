@@ -7,6 +7,7 @@ const opcoesAPI = {
 
 const linkApi = "https://www.abibliadigital.com.br/api";
 let versaoSelecionada = "nvi";
+const prefixURL = "smart-biblia";
 
  async function encontrarLivros(){
     let resultado = await axios.get(`${linkApi}/books`, opcoesAPI);
@@ -105,8 +106,14 @@ function fazerFiltro(listaLivros, testamento){
 
 function fazerForLista(testamentos) {
     let conteudo = "";
+
     for(let livro of testamentos){
-       conteudo += `<li><a href="/livro.html?sigla=${livro.abbrev.pt}">${livro.name}</a></li>`
+        let href = `/livro.html?sigla=${livro.abbrev.pt}`;
+        if (window.location.href.indexOf(prefixURL) >= 0) {
+            href = `/${prefixURL}${href}`;
+        }
+
+       conteudo += `<li><a href="${href}">${livro.name}</a></li>`
     }
     return conteudo;
 }
