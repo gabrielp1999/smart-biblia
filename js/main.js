@@ -30,19 +30,6 @@ function onClickBtnFiltros() {
 
 }
 
-async function buscarVersiculoAleatorio() {
-    const resultado = await axios.get(`${linkApi}/verses/${versaoSelecionada}/random`, opcoesAPI);
-    const api = resultado.data;
-
-    const versiculoAleatorio = document.getElementById('versiculoAleatorio');
-    const livroAleatorio = document.getElementById('livroAleatorio');
-
-    let conteudoLivro = `${api.book.name} ${api.chapter}:${api.number} `
-
-    livroAleatorio.innerHTML = conteudoLivro;
-    versiculoAleatorio.innerHTML = api.text;
-}
-
 function onClickVersao(sigla) {
     versaoSelecionada = sigla;
     buscarVersiculoAleatorio();
@@ -66,11 +53,10 @@ async function buscarVersoes() {
 async function buscarLivrosVelhoTestamento() {
     const livrosAntigoTestamento = document.querySelector('.livrosAntigoTestamento');
 
-    let filtrarLivrosVT = listaLivros.filter(function(el){
-        return el.testament === "VT";
-    })
+    let livrosVTFiltrados = fazerFiltro(listaLivros, "VT");
 
-    const conteudo = fazerForLista(filtrarLivrosVT);
+
+    const conteudo = fazerForLista(livrosVTFiltrados);
 
     livrosAntigoTestamento.innerHTML = conteudo;
 }
@@ -78,11 +64,9 @@ async function buscarLivrosVelhoTestamento() {
 async function buscarLivrosNovoTestamento() {
     const livrosNovoTestamento = document.querySelector('.livrosNovoTestamento');
 
-    let filtrarLivrosNT = listaLivros.filter(function(el){
-        return el.testament === "NT";
-    })
+    let livrosNTFiltrados = fazerFiltro(listaLivros, "NT");
 
-    const conteudo = fazerForLista(filtrarLivrosNT);
+    const conteudo = fazerForLista(livrosNTFiltrados);
 
     livrosNovoTestamento.innerHTML = conteudo;
 }
@@ -92,15 +76,15 @@ async function buscarLivro(elemento){
     const livrosVelhoTestamento = document.querySelector('.livrosAntigoTestamento');
     const livrosNovoTestamento = document.querySelector('.livrosNovoTestamento');
 
-    let filtrarLivro = listaLivros.filter(function(el){
+    let livrosFiltrados = listaLivros.filter(function(el){
         let resultado = el.name.toUpperCase().indexOf(elemento.value.toUpperCase());
 
         const resposta = resultado < 0 ?  false : true;
         return resposta;
     })
 
-    const filtrarNT = fazerFiltro(filtrarLivro,"NT");
-    const filtrarVT = fazerFiltro(filtrarLivro, "VT");
+    const filtrarNT = fazerFiltro(livrosFiltrados,"NT");
+    const filtrarVT = fazerFiltro(livrosFiltrados, "VT");
 
     const conteudoNT = fazerForLista(filtrarNT);
     const conteudoVT = fazerForLista(filtrarVT);
@@ -109,9 +93,9 @@ async function buscarLivro(elemento){
     livrosVelhoTestamento.innerHTML = conteudoVT;
 }
 
-function fazerFiltro(filtrarLivro, livro){
-    let filtrar = filtrarLivro.filter(function(el){
-        let resultado = el.testament === livro;
+function fazerFiltro(listaLivros, testamento){
+    let filtrar = listaLivros.filter(function(el){
+        let resultado = el.testament === testamento;
         return resultado;
     });
 
@@ -128,4 +112,3 @@ function fazerForLista(testamentos) {
 
 encontrarLivros();
 buscarVersoes();
-buscarVersiculoAleatorio();
