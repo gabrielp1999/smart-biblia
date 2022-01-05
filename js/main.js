@@ -46,6 +46,7 @@ async function buscarVersoes() {
         conteudoVersao += `<li><button onclick="onClickVersao('${versao.version}')">${versao.version.toUpperCase()}</button></li>`
     }
 
+
     ulVersoes.innerHTML = conteudoVersao;
 
 }
@@ -105,7 +106,7 @@ function fazerFiltro(listaLivros, testamento){
 function fazerForLista(testamentos) {
     let conteudo = "";
     for(let livro of testamentos){
-       conteudo += `<li><a href="">${livro.name}</a></li>`
+       conteudo += `<li><a href="/livro.html?sigla=${livro.abbrev.pt}">${livro.name}</a></li>`
     }
     return conteudo;
 }

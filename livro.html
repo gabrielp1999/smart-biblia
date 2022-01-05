@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/icon.ico"type="image/x-icon"/>
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/home.css">
-    <title>Smart Bíblia</title>
+    <link rel="stylesheet" href="./css/livro.css">
+    <title>Livro</title>
 </head>
 <body>
     <header class="englobaCabecalho">
@@ -61,8 +61,15 @@
         </nav>
         
         <main class="conteudo">
-            <h2 id="livroAleatorio"></h2>
-            <div id="versiculoAleatorio"></div> 
+            <h2 id="nomeLivro"></h2>
+            <ol id="listaversiculos">            
+            </ol> 
+            <div class="capitulos">
+                <div class="tituloCaixa">Capítulos</div>
+                <div class="grupoCapitulos">
+
+                </div>
+            </div>
         </main> 
 
     </div>
@@ -83,6 +90,6 @@
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/home.js"></script>
+    <script src="./js/livro.js"></script>
 </body>
 </html>

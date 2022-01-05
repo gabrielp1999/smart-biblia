@@ -6,10 +6,6 @@
     -moz-box-sizing: border-box;
 }
 
-a:visited {
-
-}
-
 html {
     font-size: 10px;
 }
@@ -204,7 +200,9 @@ body{
     /* altura da tela - cabeçalho - rodapé - padding - sidebar - btn-filtros */
     min-height: calc(100vh - 7rem - 6rem - 6rem - 7.7rem - 5.3rem);
     margin:2rem 0;
-    padding: 0 2rem;
+    padding: 0 4rem;
+    text-align: justify;
+    line-height: 2.2rem;
 }
 
 .centralizarRodaPe {
