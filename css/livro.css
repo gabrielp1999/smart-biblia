@@ -1,12 +1,89 @@
 
-.conteudo ol {
+#listaversiculos {
     margin-top: 2rem;
 }
 
-.conteudo li {
+#listaversiculos li {
     margin: 0.8rem 0;
 }
 
 #nomeLivro {
     font-size: 3.2rem;
+}
+
+.conteudo h3 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+#ulCapitulos  {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    overflow-x: scroll;
+    height: 6rem;
+}
+
+ 
+#ulCapitulos::-webkit-scrollbar {
+    height: 1rem;
+}
+
+#ulCapitulos::-webkit-scrollbar-thumb {
+    background-color: #f8bf0f;
+    border-radius: 1rem;
+}
+
+#ulCapitulos li {
+    list-style: none;
+}
+
+#ulCapitulos a {
+    background-color: #025492;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    border: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 4rem;
+}
+
+
+#ulCapitulos a:hover {
+    cursor: pointer;
+    background-color: #f8bf0f;
+    color: #025492;
+}
+
+.grupoCapitulos a {
+    border-radius: 0.5rem;
+}
+
+
+@media screen and (min-width:1024px) {
+    #ulCapitulos {
+    /*       largura container   sadebar   padding  */
+        width: calc(102.4rem - 24.85rem - 8rem);
+    }
+}
+
+.livrosAntigoTestamento .selecionado,
+.livrosNovoTestamento .selecionado {
+    background-color: #000;
+}
+
+.livrosAntigoTestamento .selecionado a,
+.livrosNovoTestamento .selecionado a {
+    color: #fff;
+}
+
+.selecionado {
+    background-color: #000 !important;
+    color: #fff !important;
 }

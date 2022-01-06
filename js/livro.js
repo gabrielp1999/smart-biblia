@@ -4,7 +4,7 @@ async function buscarNomeLivro(){
     let capitulo = getParameterByName('capitulo');
 
     if(capitulo === null || capitulo === undefined){
-        capitulo = 1;
+        capitulo = "1";
     }
 
     const resultado = await axios.get(`${linkApi}/books/${siglaLivro}/`, opcoesAPI);
@@ -12,10 +12,31 @@ async function buscarNomeLivro(){
 
     const nomeLivro = document.getElementById('nomeLivro');
     const grupoCapitulos = document.querySelector('.grupoCapitulos');
+    const ulCapitulos = document.querySelector('#ulCapitulos');
+    const titulo = document.querySelector('#titulo');
+
+    titulo.innerHTML = `${livro.name} ${capitulo} - Smart-Bíblia`;
 
     nomeLivro.innerHTML = `${livro.name}:${capitulo}`;
 
     let conteudo = "";
+    let conteudoUl = "";
+
+    
+    for (let i = 0; i < livro.chapters; i++) {
+        const numeroCapitulo = i+1;
+        let href = `/livro.html?sigla=${siglaLivro}&capitulo=${numeroCapitulo}`;
+        if (window.location.href.indexOf(prefixURL) >= 0) {
+            href = `/${prefixURL}${href}`;
+        }
+
+        let className = "";
+        if (capitulo === numeroCapitulo.toString()) {
+            className = "selecionado";
+        }
+
+       conteudo += `<a class="${className}" href="${href}">${numeroCapitulo}</a>`
+    }
 
     for (let i = 0; i < livro.chapters; i++) {
         const numeroCapitulo = i+1;
@@ -23,9 +44,16 @@ async function buscarNomeLivro(){
         if (window.location.href.indexOf(prefixURL) >= 0) {
             href = `/${prefixURL}${href}`;
         }
-       conteudo += `<a class="capitulo" href="${href}">${numeroCapitulo}</a>`
+
+        let className = "";
+        if (capitulo === numeroCapitulo.toString()) {
+            className = "selecionado";
+        }
+
+       conteudoUl += `<li><a class="${className}" href="${href}">${numeroCapitulo}</a></li>`
     }
 
+    ulCapitulos.innerHTML = conteudoUl;    
     grupoCapitulos.innerHTML = conteudo;
 }
 
@@ -42,24 +70,14 @@ async function buscarVersiculos() {
 
     const listaversiculos = document.getElementById('listaversiculos');
 
-    let conteudo = "";
+    let conteudoTexto = "";
 
     for(let versiculo of livro.verses){
-        conteudo += `<li>${versiculo.text}</li>`
+        conteudoTexto += `<li>${versiculo.text}</li>`
     }
 
-    listaversiculos.innerHTML = conteudo;
+    listaversiculos.innerHTML = conteudoTexto;
     
-}
-
-
-function getParameterByName(name, url = window.location.href) {
-    name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
 buscarNomeLivro()

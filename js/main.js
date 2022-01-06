@@ -36,22 +36,6 @@ function onClickVersao(sigla) {
     buscarVersiculoAleatorio();
 }
 
-async function buscarVersoes() {
-    const resultado = await axios.get(`${linkApi}/versions`, opcoesAPI);
-
-    const ulVersoes = document.getElementById('ulVersoes');
-
-    let conteudoVersao = ``;
-
-    for(let versao of resultado.data) {
-        conteudoVersao += `<li><button onclick="onClickVersao('${versao.version}')">${versao.version.toUpperCase()}</button></li>`
-    }
-
-
-    ulVersoes.innerHTML = conteudoVersao;
-
-}
-
 async function buscarLivrosVelhoTestamento() {
     const livrosAntigoTestamento = document.querySelector('.livrosAntigoTestamento');
 
@@ -107,16 +91,32 @@ function fazerFiltro(listaLivros, testamento){
 function fazerForLista(testamentos) {
     let conteudo = "";
 
+    const siglaLivro = getParameterByName("sigla");
+
     for(let livro of testamentos){
         let href = `/livro.html?sigla=${livro.abbrev.pt}`;
         if (window.location.href.indexOf(prefixURL) >= 0) {
             href = `/${prefixURL}${href}`;
         }
 
-       conteudo += `<li><a href="${href}">${livro.name}</a></li>`
+        let className = "";
+
+        if (siglaLivro === livro.abbrev.pt) {
+            className = "selecionado";
+        }
+        
+        conteudo += `<li class="${className}"><a href="${href}">${livro.name}</a></li>`
     }
     return conteudo;
 }
 
+function getParameterByName(name, url = window.location.href) {
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
 encontrarLivros();
-buscarVersoes();

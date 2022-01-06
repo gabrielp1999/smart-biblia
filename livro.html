@@ -7,12 +7,12 @@
     <link rel="shortcut icon" href="./img/icon.ico"type="image/x-icon"/>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/livro.css">
-    <title>Livro</title>
+    <title id="titulo">Smart-Bíblia</title>
 </head>
 <body>
     <header class="englobaCabecalho">
         <div class="cabecalho">
-            <a href="/">
+            <a>
                 <img src="./img/logo.png" alt="">
                 <h1>Smart Bíblia</h1>
             </a>
@@ -23,9 +23,7 @@
 
         <nav class="sidebar">
             <div class="versoes">
-                <span>Versões</span>
-                <ul id="ulVersoes">
-                </ul>
+                <span>Filtros</span>
 
             </div>
 
@@ -61,6 +59,10 @@
         </nav>
         
         <main class="conteudo">
+                <h3>Capítulos</h3>
+
+                <ul id="ulCapitulos"></ul> 
+                
             <h2 id="nomeLivro"></h2>
             <ol id="listaversiculos">            
             </ol> 

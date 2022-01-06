@@ -50,43 +50,12 @@ body{
 .versoes span {
     font-size: 2.4rem;
     font-weight: bold;
-    color: #025492;
+    color: #000;
     width: 100%;
     text-align: center;
     display: block;
 }
 
-.versoes ul {
-    margin-top: 1rem;
-    display: flex;
-    gap: 1rem;
-    width: 100%;
-    overflow-x: scroll;
-    height: 4rem;
-}
-
-.versoes ul::-webkit-scrollbar {
-    height: 1rem;
-}
-
-.versoes ul::-webkit-scrollbar-thumb {
-    background-color: #f8bf0f;
-    border-radius: 1rem;
-}
-
-.versoes li {
-    list-style: none;
-
-}
-
-.versoes button {
-    background-color: #025492;
-    color: #fff;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    font-weight: bold;
-    border: none;
-}
 
 .tituloCaixa {
     font-size: 1.8rem;
@@ -134,7 +103,7 @@ body{
 
 .livros {
     padding: 1.5rem;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     border:0.1rem solid #a3a3a3;
     border-radius: 1.5rem;
 }
@@ -204,6 +173,15 @@ body{
     text-align: justify;
     line-height: 2.2rem;
 }
+ 
+.conteudo span {
+    font-size: 2.6rem;
+    font-weight: bold;
+}
+.conteudo h2 {
+    margin: 2rem;
+    font-size: 2.2rem;
+}
 
 .centralizarRodaPe {
     width: 100%;
@@ -231,14 +209,6 @@ body{
 }
 
 @media screen and (min-width:1024px) {
-
-    .versoes button:hover {
-        cursor: pointer;
-        background-color: #f8bf0f;
-        color: #025492;
-    }
-
-
     #btnFiltrosLivros{
         display: none;
     }
@@ -257,6 +227,7 @@ body{
 
     .englobaCabecalho {
         height: 5rem;
+        margin-bottom: 1rem;
     }
 
     .cabecalho {
