@@ -1,1 +1,1 @@
-# Projeto Minha Bíblia completa com varias versões
+# Projeto de estudo consumindo api da bíblia desenvolvido por Gabriel Pereira

@@ -58,13 +58,15 @@ async function buscarLivrosNovoTestamento() {
     livrosNovoTestamento.innerHTML = conteudo;
 }
 
-async function buscarLivro(elemento){
+async function buscarLivro(valorInput){
 
     const livrosVelhoTestamento = document.querySelector('.livrosAntigoTestamento');
     const livrosNovoTestamento = document.querySelector('.livrosNovoTestamento');
 
     let livrosFiltrados = listaLivros.filter(function(el){
-        let resultado = el.name.toUpperCase().indexOf(elemento.value.toUpperCase());
+        const nomeFormatado = el.name.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+        const valorFormatado = valorInput.value.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+        let resultado = nomeFormatado.toUpperCase().indexOf(valorFormatado.toUpperCase());
         const resposta = resultado < 0 ?  false : true;
         return resposta;
     })
