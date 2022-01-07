@@ -5,6 +5,7 @@ const opcoesAPI = {
     }
 };
 
+
 const linkApi = "https://www.abibliadigital.com.br/api";
 let versaoSelecionada = "nvi";
 const prefixURL = "smart-biblia";
@@ -109,6 +110,7 @@ function fazerForLista(testamentos) {
     return conteudo;
 }
 
+
 function getParameterByName(name, url = window.location.href) {
     name = name.replace(/[\[\]]/g, '\\$&');
     var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
@@ -117,5 +119,12 @@ function getParameterByName(name, url = window.location.href) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
+
+// function verificarLink() {
+//     if (window.location.href.indexOf(prefixURL) >= 0) {
+//         href = `/${prefixURL}${href}`;
+//     }
+
+// }
 
 encontrarLivros();

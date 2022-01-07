@@ -73,7 +73,7 @@
 @media screen and (min-width:1024px) {
     #ulCapitulos {
     /*       largura container   sadebar   padding  */
-        width: calc(102.4rem - 24.85rem - 8rem);
+        width: calc(102.4rem - 24.85rem - 13rem);
     }
 }
 
