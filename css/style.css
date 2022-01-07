@@ -167,9 +167,9 @@ body{
 
 .conteudo {
     /* altura da tela - cabeçalho - rodapé - padding - sidebar - btn-filtros */
-    min-height: calc(100vh - 7rem - 6rem - 6rem - 7.7rem - 5.3rem);
+    min-height: calc(100vh - 7rem - 6rem - 1rem - 7.7rem - 5.3rem);
     margin:2rem 0;
-    padding: 0 4rem;
+    padding: 1rem;
     text-align: justify;
     line-height: 2.2rem;
 }
@@ -250,6 +250,7 @@ body{
         /* altura da tela - cabeçalho - rodapé - padding*/
         min-height: calc(100vh - 5rem - 6rem - 2rem);
         margin: 0;
+        padding: 0 4rem;
     }
 
     .livrosAntigoTestamento li:hover {
