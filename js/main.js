@@ -120,11 +120,17 @@ function getParameterByName(name, url = window.location.href) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
-// function verificarLink() {
-//     if (window.location.href.indexOf(prefixURL) >= 0) {
-//         href = `/${prefixURL}${href}`;
-//     }
+function adicionaLinkLogo() {
+    const linkSite = document.querySelector('#linkSite');
 
-// }
+    let href = "/index.html";
 
+    if (window.location.href.indexOf(prefixURL) >= 0) {
+        href = `/${prefixURL}${href}`;
+    }
+
+    linkSite.href = href;
+}
+
+adicionaLinkLogo();
 encontrarLivros();
