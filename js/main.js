@@ -64,7 +64,6 @@ async function buscarLivro(elemento){
 
     let livrosFiltrados = listaLivros.filter(function(el){
         let resultado = el.name.toUpperCase().indexOf(elemento.value.toUpperCase());
-
         const resposta = resultado < 0 ?  false : true;
         return resposta;
     })
