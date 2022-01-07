@@ -67,6 +67,12 @@
 
 .grupoCapitulos a {
     border-radius: 0.5rem;
+    font-weight: bold;
+}
+
+.grupoCapitulos a:hover{
+    background-color: #f8bf0f;
+    color: #025492;
 }
 
 
@@ -76,6 +82,23 @@
         width: calc(102.4rem - 24.85rem - 13rem);
     }
 }
+
+.livrosAntigoTestamento .selecionado:hover {
+    background-color: #f8bf0f;
+}
+
+.livrosAntigoTestamento .selecionado a:hover {
+    color: #025492;
+}
+
+#ulCapitulos .selecionado {
+    background-color: #000;
+}
+
+.grupoCapitulos .selecionado {
+    background-color: #000;
+}
+
 
 .livrosAntigoTestamento .selecionado,
 .livrosNovoTestamento .selecionado {
@@ -91,21 +114,11 @@
     background-color: #025492;
 }
 
-.livrosNovoTestamento a,
-.livrosNovoTestamento a:visited{
-    color: #025492;
-}
-
-.livrosAntigoTestamento a, 
-.livrosAntigoTestamento a:visited {
-    color: #f8bf0f;
-}
-
 .livrosNovoTestamento li {
     background-color: #f8bf0f;
 }
 
 .selecionado {
-    background-color: #000 !important;
-    color: #fff !important;
+    background-color: #000;
+    color: #fff;
 }
