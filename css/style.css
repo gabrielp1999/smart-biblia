@@ -6,6 +6,7 @@
     -moz-box-sizing: border-box;
 }
 
+
 html {
     font-size: 10px;
 }
@@ -127,6 +128,7 @@ body{
     background-color: #025492;
 }
 
+.livrosNovoTestamento a,
 .livrosNovoTestamento a:visited{
     color: #025492;
 }

@@ -87,6 +87,23 @@
     color: #fff;
 }
 
+.livrosAntigoTestamento li {
+    background-color: #025492;
+}
+
+.livrosNovoTestamento a:visited{
+    color: #025492;
+}
+
+.livrosAntigoTestamento a, 
+.livrosAntigoTestamento a:visited {
+    color: #f8bf0f;
+}
+
+.livrosNovoTestamento li {
+    background-color: #f8bf0f;
+}
+
 .selecionado {
     background-color: #000 !important;
     color: #fff !important;
